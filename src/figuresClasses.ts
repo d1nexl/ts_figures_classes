@@ -17,11 +17,11 @@ export class Triangle implements Figure {
     private c: number,
   ) {
     if (a <= 0 || b <= 0 || c <= 0) {
-      throw new Error('All sides must be greatest than zero');
+      throw new Error('All sides must be greater than zero');
     }
 
     if (a + b <= c || a + c <= b || b + c <= a) {
-      throw new Error(`Sides ${a}, ${b}, ${c} cant form a triangle`);
+      throw new Error(`Sides ${a}, ${b} and ${c} can't form a triangle`);
     }
   }
 
@@ -34,14 +34,14 @@ export class Triangle implements Figure {
 }
 
 export class Circle implements Figure {
-  shape: Shape = 'triangle';
+  shape: Shape = 'circle';
 
   constructor(
     public color: Color,
     private radius: number,
   ) {
-    if (radius <= 1) {
-      throw new Error('Radius must be greatest than zero');
+    if (radius <= 0) {
+      throw new Error('Radius must be greater than zero');
     }
   }
 
@@ -61,7 +61,7 @@ export class Rectangle implements Figure {
     private height: number,
   ) {
     if (width <= 0 || height <= 0) {
-      throw new Error('Widt and height must be greatest than zero');
+      throw new Error('Width and height must be greater than zero');
     }
   }
 
